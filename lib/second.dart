@@ -74,17 +74,57 @@ class _SceondState extends State<Sceond> {
                 SizedBox(
                   height: 20,
                 ),
+                Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "${modallist[a].Name}",
+                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    )),
+                Container(height: 1,width: double.infinity,color: Colors.grey.shade800,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: InkWell(
+                        onTap: () {
+                          launchUrl(
+                              Uri.parse('tel: ${modallist[a].Num}'));
+                        },
+                        child: Column(
+                          children: [
+                            Icon(Icons.call,color: Colors.white,),
+                            SizedBox(height: 5,),
+                            Text("Call",style: TextStyle(color: Colors.white),)
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: InkWell(
+                        onTap: () {
+                          launchUrl(
+                              Uri.parse('sms: ${modallist[a].Num}'));
+                        },
+                        child: Column(
+                          children: [
+                            Icon(Icons.message,color: Colors.white,),
+                            SizedBox(height: 5,),
+                            Text("Sms",style: TextStyle(color: Colors.white),)
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Container(height: 1,width: double.infinity,color: Colors.grey.shade800,),
+                SizedBox(height: 10,),
                 Container(
                   width: double.infinity,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            "${modallist[a].Name}",
-                            style: TextStyle(color: Colors.white, fontSize: 25),
-                          )),
                       SizedBox(
                         height: 10,
                       ),
